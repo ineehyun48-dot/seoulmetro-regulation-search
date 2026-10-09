@@ -21,7 +21,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
+          
+      - name: 필요한 Python 라이브러리 설치
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+          
       - name: 서울교통공사 사규 업데이트 확인
         env:
           SEOULMETRO_RULES_URL: "https://www.seoulmetro.co.kr/kr/board.do?menuIdx=518"
